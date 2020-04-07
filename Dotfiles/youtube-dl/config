@@ -1,0 +1,13 @@
+# Found on Reddit. Posted by u/BlueSwordM
+
+#Write the thumbnail to the video
+--write-thumbnail
+
+#Always download AV01 video first, then VP9 in 4k60 max, then AVC
+-f "bestvideo[vcodec*=av01][width>=1920]+bestaudio[ext=webm]"/"bestvideo[vcodec*=vp9][width<=3840]+bestaudio[ext=webm]"/"bestvideo[vcodec*=avc][width<=1920]+bestaudio[ext=webm]"
+
+#Merge
+--merge-output-format mkv
+
+#Output File Format
+-o E:/youtube-dl/%(title)s.%(ext)s
