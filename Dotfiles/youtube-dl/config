@@ -10,4 +10,4 @@
 --merge-output-format mkv
 
 #Output File Format
--o E:/youtube-dl/%(title)s.%(ext)s
+-o ./%(title)s.%(ext)s
