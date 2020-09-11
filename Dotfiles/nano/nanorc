@@ -29,10 +29,10 @@
 set autoindent
 
 ## Back up files to the current filename plus a tilde.
-set backup
+# set backup
 
 ## The directory to put unique backup files in.
-set backupdir "/home/piotr/tmp/nano_backup"
+# set backupdir "/home/piotr/tmp/nano_backup"
 
 ## Use bold text instead of reverse video text.
 set boldtext

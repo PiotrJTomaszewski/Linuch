@@ -23,7 +23,7 @@ autoload -Uz compinit
 compinit
 
 # Default editor
-export EDITOR='nano'
+export EDITOR='vim'
 
 # Use tmux
 #[ -z "$TMUX" ] && { tmux attach || exec tmux new-session && exit; }
@@ -45,6 +45,7 @@ alias cp='cp -i'
 
 # Humanize the output
 alias df='df -h'
+alias duh='du -h'
 
 # Display my classes timetable
 alias plan='firefox /home/piotr/Documents/studia/rok_III/sem_6/plan.pdf'
@@ -67,7 +68,7 @@ alias rss='canto-curses'
 
 ## Custom functions
 # Change directory and list
-cdl(){ cd "$1"; ls --color }
+cdl(){ cd "$1"; ls }
 
 # Download aur package
 aur(){ git clone "https://aur.archlinux.org/$1.git" }
@@ -77,3 +78,5 @@ pdfbw(){ gs -sOutputFile="$2" -sDEVICE=pdfwrite -sColorConversionStrategy=Gray -
 
 # Pipe command output to bat
 batstrings(){ strings "$@" | bat }
+bathexdump(){ hexdump -C "$@" | bat }
+bathexdump(){ hexdump -C "$@" | bat }
