@@ -25,6 +25,15 @@ compinit
 # Default editor
 export EDITOR='vim'
 
+## Colors
+# Enable 256 colors support
+case $TERM in
+"xterm")
+    export TERM="xterm-256color"
+    ;;
+*)
+esac
+
 # Fix readability issues of blue color
 echo -e "\\e]PC6060f0"
 
