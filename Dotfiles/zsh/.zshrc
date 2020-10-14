@@ -91,4 +91,3 @@ pdfbw(){ gs -sOutputFile="$2" -sDEVICE=pdfwrite -sColorConversionStrategy=Gray -
 # Pipe command output to bat
 batstrings(){ strings "$@" | bat }
 bathexdump(){ hexdump -C "$@" | bat }
-bathexdump(){ hexdump -C "$@" | bat }
