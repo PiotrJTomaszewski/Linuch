@@ -49,6 +49,7 @@ alias la='ls -A --color'
 alias ls='ls --color'
 alias grep='grep --color'
 alias diff='diff --color'
+alias ip='ip -color'
 
 # Be more interactive
 alias rm='rm -i'
