@@ -40,6 +40,14 @@ echo -e "\\e]PC6060f0"
 # Use tmux
 #[ -z "$TMUX" ] && { tmux attach || exec tmux new-session && exit; }
 
+# Use vimpager as pager if it's installed
+export PAGER=$(command -v vimpager)
+if [ -e $PAGER ]
+then
+    alias less=$PAGER
+    alias zless=$PAGER
+fi
+
 ## Aliases
 # Give my life some colors
 alias l='ls --color'
