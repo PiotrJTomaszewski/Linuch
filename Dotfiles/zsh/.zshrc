@@ -42,19 +42,35 @@ echo -e "\\e]PC6060f0"
 
 # Use vimpager as pager if it's installed
 export PAGER=$(command -v vimpager)
-if [ -e $PAGER ]
+if [ -e "$PAGER" ]
 then
     alias less=$PAGER
     alias zless=$PAGER
 fi
 
 ## Aliases
-# Give my life some colors
-alias l='ls --color'
-alias ll='ls -lh --color'
-alias lla='ls -Alh --color'
-alias la='ls -A --color'
-alias ls='ls --color'
+# Give my life some colors & replace some tools with modern equivalents
+if [ -e "$(command -v exa)" ]
+then
+    alias ls='exa --icons -F'
+    alias l='exa --icons -F'
+    alias ll='exa --icons -lF'
+    alias lla='exa --icons -alF'
+    alias la='exa --icons -aF'
+    alias lsd='ls -DF'
+else
+    alias l='ls --color'
+    alias ll='ls -lh --color'
+    alias lla='ls -Alh --color'
+    alias la='ls -A --color'
+    alias ls='ls --color'
+    # List directories
+    alias lsd='ls -l | grep "^d" | tr -s " " | cut -f9 -d " "' 
+fi
+if [ -e ~/.config/broot/launcher/bash/br ]
+then
+    source ~/.config/broot/launcher/bash/br
+fi
 alias grep='grep --color'
 alias diff='diff --color'
 alias ip='ip -color'
@@ -67,13 +83,11 @@ alias cp='cp -i'
 # Humanize the output
 alias df='df -h'
 alias duh='du -h'
+alias free='free -h'
 
 # Display my classes timetable
 alias plan='firefox /home/piotr/Documents/studia/rok_III/sem_6/plan.pdf'
 alias plan_online='firefox https://fc.put.poznan.pl/sites/default/files/d_INF_1st_6sem.pdf'
-
-# List directories
-alias lsd='ls -l | grep "^d" | tr -s " " | cut -f9 -d " "'
 
 # Start bluetooth
 alias startbluetooth='sudo systemctl start bluetooth.service && bluetoothctl power on && bluetoothctl'
@@ -100,3 +114,7 @@ pdfbw(){ gs -sOutputFile="$2" -sDEVICE=pdfwrite -sColorConversionStrategy=Gray -
 # Pipe command output to bat
 batstrings(){ strings "$@" | bat }
 bathexdump(){ hexdump -C "$@" | bat }
+
+# OCaml OPAM configuration
+test -r /home/pjtom/.opam/opam-init/init.zsh && . /home/pjtom/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
