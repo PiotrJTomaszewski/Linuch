@@ -52,18 +52,18 @@ fi
 # Give my life some colors & replace some tools with modern equivalents
 if [ -e "$(command -v exa)" ]
 then
-    alias ls='exa --icons -F'
-    alias l='exa --icons -F'
-    alias ll='exa --icons -lF'
-    alias lla='exa --icons -alF'
-    alias la='exa --icons -aF'
-    alias lsd='ls -DF'
+    alias ls='exa --icons --git --group -F'
+    alias l='ls'
+    alias ll='ls -l'
+    alias lla='ls -al'
+    alias la='ls -a'
+    alias lsd='ls -D'
 else
-    alias l='ls --color'
-    alias ll='ls -lh --color'
-    alias lla='ls -Alh --color'
-    alias la='ls -A --color'
     alias ls='ls --color'
+    alias l='ls'
+    alias ll='ls -lh'
+    alias lla='ls -Alh'
+    alias la='ls -A'
     # List directories
     alias lsd='ls -l | grep "^d" | tr -s " " | cut -f9 -d " "' 
 fi
