@@ -9,5 +9,10 @@
 #Merge
 --merge-output-format mkv
 
+#Add metadata
+--write-description
+--write-info-json
+--write-annotations
+
 #Output File Format
 -o ./%(title)s.%(ext)s
