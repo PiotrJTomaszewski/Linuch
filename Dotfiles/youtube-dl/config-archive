@@ -7,7 +7,7 @@
 -f "bestvideo[vcodec*=av01][width>=1920]+bestaudio[ext=webm]"/"bestvideo[vcodec*=vp9][width<=3840]+bestaudio[ext=webm]"/"bestvideo[vcodec*=avc][width<=1920]+bestaudio[ext=webm]"
 
 #Merge
---merge-output-format mkv
+--merge-output-format mp4
 
 #Fetch metadata
 --write-description
@@ -22,5 +22,5 @@
 --write-comments
 
 #Output File Format
--o ./%(title)s.%(ext)s
+-o ./%(id)s/%(id)s.%(ext)s
 
