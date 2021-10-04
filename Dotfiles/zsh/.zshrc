@@ -101,6 +101,9 @@ alias cal='cal -m'
 alias temacs='emacs --no-window-system'
 alias rss='canto-curses'
 
+# Use all cores in make
+alias make="make -j $(nproc)"
+
 ## Custom functions
 # Change directory and list
 cdl(){ cd "$1"; ls }
