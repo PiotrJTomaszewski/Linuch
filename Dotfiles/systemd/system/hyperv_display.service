@@ -1,0 +1,13 @@
+[Unit]
+Description=Forward X11 to HyperV socket
+After=socket.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart=socat -b65536 UNIX-LISTEN:/tmp/.X11-unix/X5,fork,mode=777 SOCKET-CONNECT:40:0:x0000x70170000x02000000x00000000
+
+[Install]
+WantedBy=multi-user.target
+
