@@ -24,6 +24,9 @@ compinit
 # Default editor
 export EDITOR='vim'
 
+# Make sudo use alias expansion
+alias sudo='sudo '
+
 ## Colors
 # Enable 256 colors support
 case $TERM in
