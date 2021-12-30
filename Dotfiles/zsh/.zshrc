@@ -89,13 +89,6 @@ alias df='df -h'
 alias duh='du -h'
 alias free='free -h'
 
-# Display my classes timetable
-alias plan='firefox /home/piotr/Documents/studia/rok_III/sem_6/plan.pdf'
-alias plan_online='firefox https://fc.put.poznan.pl/sites/default/files/d_INF_1st_6sem.pdf'
-
-# Start bluetooth
-alias startbluetooth='sudo systemctl start bluetooth.service && bluetoothctl power on && bluetoothctl'
-
 # Start 32bit wine
 alias wine32='WINEARCH=win32 WINEPREFIX=~/.wine32 wine'
 
@@ -121,7 +114,4 @@ pdfbw(){ gs -sOutputFile="$2" -sDEVICE=pdfwrite -sColorConversionStrategy=Gray -
 # Pipe command output to bat
 batstrings(){ strings "$@" | bat }
 bathexdump(){ hexdump -C "$@" | bat }
-
-# OCaml OPAM configuration
-test -r /home/pjtom/.opam/opam-init/init.zsh && . /home/pjtom/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
