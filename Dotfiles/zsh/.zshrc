@@ -54,12 +54,14 @@ fi
 # Give my life some colors & replace some tools with modern equivalents
 if [ -e "$(command -v exa)" ]
 then
-    alias ls='exa --icons --git --group -F'
-    alias l='ls'
-    alias ll='ls -l'
-    alias lla='ls -al'
-    alias la='ls -a'
-    alias lsd='ls -D'
+    base_ls='exa --icons --git --group -F'
+    alias ls="${base_ls}"
+    alias l="${base_ls}"
+    alias ll="${base_ls} -l"
+    alias lla="${base_ls} -al"
+    alias la="${base_ls} -a"
+    alias lsd="${base_ls} -D"
+    alias tree="exa --tree --icons -F"
 else
     alias ls='ls --color'
     alias l='ls'
