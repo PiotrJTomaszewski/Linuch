@@ -36,9 +36,6 @@ case $TERM in
 *)
 esac
 
-# Fix readability issues of blue color
-echo -e "\\e]PC6060f0"
-
 # Use tmux
 #[ -z "$TMUX" ] && { tmux attach || exec tmux new-session && exit; }
 
