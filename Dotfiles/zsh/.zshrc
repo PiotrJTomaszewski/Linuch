@@ -24,6 +24,9 @@ compinit
 # Default editor
 export EDITOR='vim'
 
+# Make gpg-agent use curses dialog to ask for password
+export GPG_TTY=$(tty)
+
 # Make sudo use alias expansion
 alias sudo='sudo '
 
